@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <%=  @recipe.name + " " +  "by" + " " +  @recipe.username %>
+</h1>
+
+<p>
+  <strong>not Description:</strong>
+  <%= @recipe.description %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag(@recipe.picture_url, width: 600) if @recipe.picture.present? %>
+</p>
+
+<p>
+  <strong>Ingredients:</strong>
+  <%= @recipe.ingredients %>
+</p>
+
+<p>
+  <strong>Steps:</strong>
+  <%= @recipe.steps %>
+</p>
+
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>
